@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug swift-codespaces-sample",
+            "program": "${workspaceFolder}/.build/debug/swift-codespaces-sample",
+            "args": [],
+            "cwd": "${workspaceFolder:swift-codespaces-sample}",
+            "preLaunchTask": "swift: Build Debug swift-codespaces-sample"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release swift-codespaces-sample",
+            "program": "${workspaceFolder}/.build/release/swift-codespaces-sample",
+            "args": [],
+            "cwd": "${workspaceFolder:swift-codespaces-sample}",
+            "preLaunchTask": "swift: Build Release swift-codespaces-sample"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Test swift-codespaces-sample",
+            "program": "./.build/debug/swift-codespaces-samplePackageTests.xctest",
+            "cwd": "${workspaceFolder:swift-codespaces-sample}",
+            "preLaunchTask": "swift: Build All"
+        }
+    ]
+}
