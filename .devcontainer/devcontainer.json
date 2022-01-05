@@ -1,0 +1,32 @@
+{
+	"name": "Swift",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	],
+	"settings": {
+		"lldb.library": "/usr/lib/liblldb.so",
+		"lldb.launch.expressions": "native",
+		"lldb.evaluateForHovers": false,
+		"sourcekit-lsp.toolchainPath": "/usr/bin/",
+		"sourcekit-lsp.serverPath": "/usr/bin/sourcekit-lsp",
+		"apple-swift-format.path": "/workspaces/swift-format/.build/release/swift-format",
+
+	},
+	"extensions": [
+		"sswg.swift-lang",
+		"vadimcn.vscode-lldb",
+		"hbenl.vscode-test-explorer",
+		"makeitbetter.vscode-swift-test-adapter",
+		"vknabel.vscode-apple-swift-format",
+		"fredapackages.swift-add-documentation",
+		"cweijan.vscode-office",
+		"philhindle.errorlens",
+		"wattenberger.footsteps"
+	],
+	"postCreateCommand": "[[ ! -d /workspaces/swift-format ]] && cd /workspaces && git clone --single-branch -b 0.50500.0 https://github.com/apple/swift-format.git --quiet && cd swift-format && swift build -c release --product swift-format",
+}
